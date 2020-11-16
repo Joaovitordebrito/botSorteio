@@ -30,6 +30,7 @@ class InstaBot:
             pyautogui.click(x=600, y=800)
             pyautogui.typewrite("@" + words)
             pyautogui.press("enter")
+            print("comentario feito")
             time = uniform(30.0, 60.0)
             sleep(time)
 InstaBot(usuario, senha)
