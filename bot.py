@@ -30,12 +30,12 @@ class InstaBot:
         s = open("./text.txt", "r")
         for words in s:
             with pyautogui(display=':0') as gui:
-            # pyautogui.click(x=600, y=800)
-            text_area = self.driver.find_element_by_class_name("Ypffh")\
-                .click()
-            gui.typewrite("@" + words)
-            gui.press("enter")
-            print("comentario feito")
-            time = uniform(30.0, 60.0)
-            sleep(time)
+                # pyautogui.click(x=600, y=800)
+                text_area = self.driver.find_element_by_class_name("Ypffh")\
+                    .click()
+                gui.typewrite("@" + words)
+                gui.press("enter")
+                print("comentario feito")
+                time = uniform(30.0, 60.0)
+                sleep(time)
 InstaBot(usuario, senha)
