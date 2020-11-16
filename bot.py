@@ -4,7 +4,7 @@ import pyautogui
 from random import uniform
 import os
 
-Display(os.environ['DISPLAY'] = ':0')
+display = Display(os.environ['DISPLAY'] = ':0')
 
 usuario = input("digite seu usuario do insta: ")
 senha = input("digite sua senha do insta: ")
