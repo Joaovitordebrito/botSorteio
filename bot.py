@@ -2,12 +2,11 @@ from selenium import webdriver
 from time import sleep
 import pyautogui
 from random import uniform
-import os
+from getpass import getpass
 
-display = Display(os.environ['DISPLAY'] = ':0')
 
 usuario = input("digite seu usuario do insta: ")
-senha = input("digite sua senha do insta: ")
+senha = getpass("digite sua senha do insta: ")
 class InstaBot:
 
     def __init__(self, username, pw):
@@ -30,11 +29,12 @@ class InstaBot:
         sleep(3)
         s = open("./text.txt", "r")
         for words in s:
+            with pyautogui(display=':0') as gui:
             # pyautogui.click(x=600, y=800)
-            self.driver.find_element_by_class_name("Ypffh")\
+            text_area = self.driver.find_element_by_class_name("Ypffh")\
                 .click()
-            pyautogui.typewrite("@" + words)
-            pyautogui.press("enter")
+            gui.typewrite("@" + words)
+            gui.press("enter")
             print("comentario feito")
             time = uniform(30.0, 60.0)
             sleep(time)
