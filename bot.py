@@ -9,7 +9,7 @@ class InstaBot:
 
     def __init__(self, username, pw):
         self.driver = webdriver.Chrome("./chromedriver.exe")
-        self.driver.get('https://www.instagram.com/p/CG_R1RvDB25/')
+        self.driver.get('https://www.instagram.com/p/CHiQLRjnIg8/?igshid=6zw5rv08q1nk')
         sleep(2)
         self.driver.find_element_by_xpath("//button[contains(text(), 'Entrar')]")\
             .click()
@@ -27,7 +27,9 @@ class InstaBot:
         sleep(3)
         s = open("./text.txt", "r")
         for words in s:
-            pyautogui.click(x=600, y=800)
+            # pyautogui.click(x=600, y=800)
+            self.driver.find_element_by_class_name("Ypffh")\
+                .click()
             pyautogui.typewrite("@" + words)
             pyautogui.press("enter")
             print("comentario feito")
