@@ -1,1 +1,1 @@
-web: python bot.py
+web: DISPLAY=:0 python bot.py
