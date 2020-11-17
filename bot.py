@@ -1,8 +1,8 @@
 from selenium import webdriver
 from time import sleep
-import pyautogui
 from random import uniform
 from getpass import getpass
+from selenium.webdriver.common.keys import Keys
 
 usuario = input("digite seu usuario do insta: ")
 senha = getpass("digite sua senha do insta: ")
@@ -31,8 +31,11 @@ class InstaBot:
             # pyautogui.click(x=600, y=800)
             text_area = self.driver.find_element_by_class_name("Ypffh")\
                 .click()
-            pyautogui.typewrite("@" + words)
-            pyautogui.press("enter")
+            sleep(2)    
+            self.driver.find_element_by_class_name("Ypffh")\
+                .send_keys("@" + words)
+            self.driver.find_element_by_class_name("Ypffh")\
+                .send_keys(Keys.ENTER)
             print("comentario feito")
             time = uniform(30.0, 60.0)
             sleep(time)
