@@ -6,7 +6,7 @@ from getpass import getpass
 from selenium.webdriver.common.keys import Keys
 
 
-op = webdriver.ChromeOption()
+op = webdriver.ChromeOptions()
 op.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
 op.add_argument("--headless")
 op.add_argument("--no-sandbox")
